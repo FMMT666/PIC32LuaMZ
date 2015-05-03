@@ -2,6 +2,7 @@
 *
 !.gitignore
 !Makefile
+!README.md
 !build
 !debug
 !dist
