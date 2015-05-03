@@ -1,0 +1,9 @@
+*.*
+*
+!.gitignore
+!Makefile
+!build
+!debug
+!dist
+!nbproject
+!src

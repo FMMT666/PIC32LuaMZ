@@ -1,0 +1,6 @@
+*.*
+*
+!.gitignore
+!configurations.xml
+!project.xml
+!project.properties
