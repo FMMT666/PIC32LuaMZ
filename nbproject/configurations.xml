@@ -68,11 +68,11 @@
       <itemPath>src/ltable.c</itemPath>
       <itemPath>src/ltablib.c</itemPath>
       <itemPath>src/ltm.c</itemPath>
-      <itemPath>src/luac.c</itemPath>
       <itemPath>src/lundump.c</itemPath>
       <itemPath>src/lutf8lib.c</itemPath>
       <itemPath>src/lvm.c</itemPath>
       <itemPath>src/lzio.c</itemPath>
+      <itemPath>src/lua.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -247,6 +247,7 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>

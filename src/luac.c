@@ -194,14 +194,19 @@ static int pmain(lua_State* L)
 
 int main(int argc, char* argv[])
 {
- lua_State* L;
+    lua_State* L;
  
- // added by ASkr
+ // added by ASkr; asPicInit() in main()
  asPicInit();
+
+ // changed by ASkr; remove cmd line args in main()
+// int i=doargs(argc,argv);
+// argc-=i; argv+=i;
+// if (argc<=0) usage("no input files given");
+ // just in case...
+ argc = 0;
+ argv = NULL;
  
- int i=doargs(argc,argv);
- argc-=i; argv+=i;
- if (argc<=0) usage("no input files given");
  L=luaL_newstate();
  if (L==NULL) fatal("cannot create state: not enough memory");
  lua_pushcfunction(L,&pmain);

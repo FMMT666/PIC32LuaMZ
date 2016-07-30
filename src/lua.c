@@ -6,6 +6,10 @@
 
 #define lua_c
 
+// added by ASkr
+#include <p32xxxx.h>
+#include "asPIC.h"
+
 #include "lprefix.h"
 
 
@@ -309,9 +313,14 @@ static int pushline (lua_State *L, int firstline) {
   char *b = buffer;
   size_t l;
   const char *prmt = get_prompt(L, firstline);
+  
+  // ASkr TODO; input via pushline(); toggle one LED upon passing this
+  LATHINV |= 0b1;
   int readstatus = lua_readline(L, b, prmt);
   if (readstatus == 0)
     return 0;  /* no input (prompt will be popped by caller) */
+
+  
   lua_pop(L, 1);  /* remove prompt */
   l = strlen(b);
   if (l > 0 && b[l-1] == '\n')  /* line ends with newline? */
@@ -591,9 +600,17 @@ static int pmain (lua_State *L) {
   return 1;
 }
 
-
-int main (int argc, char **argv) {
+// changed by ASkr; we don't need cmd line args...
+//int main (int argc, char **argv) {
+int main()
+{
+  int argc = 1;
+  char *argv[2]={"pic32lua",NULL};
+   
   int status, result;
+  
+  asPicInit();
+  
   lua_State *L = luaL_newstate();  /* create state */
   if (L == NULL) {
     l_message(argv[0], "cannot create state: not enough memory");
