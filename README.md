@@ -11,7 +11,6 @@ Lua for the [PIC32MZ][3] \o/
 
 Upcoming attraction, nothing to see here (for now ;-).  
 
-
 ---
 
 ## REQUIREMENTS
@@ -36,6 +35,22 @@ Upcoming attraction, nothing to see here (for now ;-).
   - all the other stuff from [here][2]
   - ...
 
+---
+
+## THOUGHTS, NOTES AND RANTS
+
+#### 2016/07/31
+
+  As predicted years ago, Microchip completely dropped "PLIB", its peripheral library and went
+  "full [Harmony][5]".  
+  Currently, I see a lot of functionality, even pretty basic one, not working correctly, mostly because
+  of wrong defines for the EC chips, but for more complicated features, namely TCP/IP or USB stacks,
+  there's no way around this...
+  
+  So as it seems, I'm going to give it a try, although I expect code changes for every upcoming Harmony relase...
+  
+  (And one day, they're going to drop that one too :-)
+  
 
 ---
 
@@ -59,5 +74,6 @@ FMMT666(ASkr)
 [2]: https://github.com/FMMT666/PIC32Lua
 [3]: http://www.microchip.com/design-centers/32-bit/architecture/pic32mz-family
 [4]: http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=DM320006
+[5]: http://www.microchip.com/mplab/mplab-harmony
 
 
